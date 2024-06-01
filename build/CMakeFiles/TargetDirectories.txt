@@ -1,0 +1,3 @@
+/home/vaquita/dev/app/build/CMakeFiles/app.dir
+/home/vaquita/dev/app/build/CMakeFiles/edit_cache.dir
+/home/vaquita/dev/app/build/CMakeFiles/rebuild_cache.dir
