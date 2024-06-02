@@ -7,8 +7,8 @@ using namespace std;
 void server(chrono::system_clock::time_point &serverTime) {
   while (true) {
     serverTime = chrono::system_clock::now();
-    cout << "Tiempo del servidor: "
-         << chrono::system_clock::to_time_t(serverTime) << endl;
+    time_t t = chrono::system_clock::to_time_t(serverTime);
+    cout << "Tiempo del servidor: \t\t" << ctime(&t) << endl;
     this_thread::sleep_for(chrono::seconds(1));
   }
 }
@@ -24,8 +24,8 @@ void client(chrono::system_clock::time_point &serverTime) {
     chrono::system_clock::time_point adjustedTime =
         serverTime +
         chrono::duration_cast<chrono::system_clock::duration>(latency);
-    cout << "Tiempo ajustado del cliente: "
-         << chrono::system_clock::to_time_t(adjustedTime) << endl;
+    time_t t = chrono::system_clock::to_time_t(adjustedTime);
+    cout << "Tiempo aj del cliente: \t\t" << ctime(&t) << endl;
   }
 }
 
